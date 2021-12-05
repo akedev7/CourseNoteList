@@ -1,10 +1,11 @@
 package com.example.coursenotelistapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.ListView
-import com.example.coursenotelistapp.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.myfirstapplication.DataManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class NoteListActivity : AppCompatActivity() {
@@ -17,5 +18,8 @@ class NoteListActivity : AppCompatActivity() {
             val activityIntent = Intent(this, MainActivity::class.java)
             startActivity(activityIntent)
         }
+
+        val listNotes = findViewById<ListView>(R.id.listNotes)
+        listNotes.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, DataManager.notes)
     }
 }
