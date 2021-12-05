@@ -12,7 +12,8 @@
         <activity
             android:name=".NoteListActivity"
             android:label="Note Keeper"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +22,8 @@
         <activity
             android:name=".MainActivity"
             android:label="Edit Note"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="sensor">
         </activity>
     </application>
 </manifest>
