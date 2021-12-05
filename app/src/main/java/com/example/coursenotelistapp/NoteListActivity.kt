@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapplication.DataManager
+import com.example.myfirstapplication.NoteInfo
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class NoteListActivity : AppCompatActivity() {
@@ -28,5 +29,11 @@ class NoteListActivity : AppCompatActivity() {
             startActivity(activityIntent)
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val listNotes = findViewById<ListView>(R.id.listNotes)
+        (listNotes.adapter as ArrayAdapter<NoteInfo>).notifyDataSetChanged()
     }
 }

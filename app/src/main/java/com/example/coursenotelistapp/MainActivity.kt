@@ -9,6 +9,7 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapplication.CourseInfo
 import com.example.myfirstapplication.DataManager
+import com.example.myfirstapplication.NoteInfo
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         notePosition = intent.getIntExtra(EXTRA_NOTE_POSITION, POSITION_NOT_SET)
         if (notePosition != POSITION_NOT_SET) {
             displayNote()
+        } else {
+            DataManager.notes.add(NoteInfo())
+            notePosition = DataManager.notes.lastIndex
         }
 
     }
@@ -95,4 +99,5 @@ class MainActivity : AppCompatActivity() {
         note.courseInfo = spinnerCourse.selectedItem as CourseInfo
 
     }
+
 }
