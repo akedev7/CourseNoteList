@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myfirstapplication.CourseInfo
 import com.example.myfirstapplication.DataManager
 
 class MainActivity : AppCompatActivity() {
@@ -75,5 +76,23 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        saveNote()
+    }
+
+    private fun saveNote() {
+
+        val textNoteTitle = findViewById<EditText>(R.id.textNoteTitle)
+        val textNoteText = findViewById<EditText>(R.id.textNoteText)
+        val spinnerCourse = findViewById<Spinner>(R.id.spinnerCourses)
+
+        val note = DataManager.notes[notePosition]
+        note.title = textNoteTitle.text.toString()
+        note.text = textNoteText.text.toString()
+        note.courseInfo = spinnerCourse.selectedItem as CourseInfo
+
     }
 }
