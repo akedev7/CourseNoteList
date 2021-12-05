@@ -1,6 +1,6 @@
 package com.example.myfirstapplication
 
-class DataManager {
+object DataManager {
     val courses = HashMap<String, CourseInfo>()
     val notes = ArrayList<NoteInfo>()
 
