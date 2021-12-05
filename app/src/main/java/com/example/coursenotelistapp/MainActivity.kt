@@ -1,6 +1,7 @@
 package com.example.coursenotelistapp
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
@@ -42,4 +43,10 @@ class MainActivity : AppCompatActivity() {
         val spinnerCourse = findViewById<Spinner>(R.id.spinnerCourses)
         spinnerCourse.setSelection(coursePosition)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
 }
