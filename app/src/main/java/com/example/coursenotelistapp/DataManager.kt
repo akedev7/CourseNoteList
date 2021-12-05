@@ -11,14 +11,14 @@ object DataManager {
     private fun initializeCourseAndNotes() {
         var course = CourseInfo("android_intents", "Android Programing with Intents")
         courses[course.courseId] = course
-        notes.add(NoteInfo(course, "Thi note for Android Programing with Intents"))
+        notes.add(NoteInfo(course, "Thi note for Android Programing with Intents","Note Note Note"))
 
         course = CourseInfo("andriod_asyns", "Android Async Programming and Services")
         courses[course.courseId] = course
-        notes.add(NoteInfo(course, "Thi note for Android Async Programming and Services"))
+        notes.add(NoteInfo(course, "Thi note for Android Async Programming and Services", "Note test test"))
 
         course = CourseInfo("java_core", "Java Fundamental The Core Platform")
         courses[course.courseId] = course
-        notes.add(NoteInfo(course, "Thi note for Java Fundamental The Core Platform"))
+        notes.add(NoteInfo(course, "Thi note for Java Fundamental The Core Platform", "Note test test"))
     }
 }

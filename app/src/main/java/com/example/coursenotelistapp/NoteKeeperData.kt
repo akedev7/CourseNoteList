@@ -6,4 +6,4 @@ data class CourseInfo(val courseId: String, val title: String) {
     }
 }
 
-data class NoteInfo(var courseInfo: CourseInfo, var title: String)
+data class NoteInfo(var courseInfo: CourseInfo, var title: String, var text: String)
